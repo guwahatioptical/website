@@ -1,0 +1,33 @@
+.intro{
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    opacity: 1;
+    z-index: 100;
+    animation: stay forwards;
+    animation-duration: 5s;
+}
+.intro-body{
+    background-color: black;
+    width: inherit;
+    height: 0vh;
+}
+.animate{
+    animation: splash forwards;
+    animation-duration: 5s;
+    transition: .3s;
+}
+@keyframes splash {
+    0%{height: 0vh;}
+    20%{height: 50vh;}
+    100%{height: 100vh;}
+}
+@keyframes stay {
+    0%{opacity: 1;}
+    15%{opacity: 1;}
+    25%{opacity: 1;}
+    35%{opacity: 1;}
+    45%{opacity: 1;}
+    100%{opacity: 0;}
+}
