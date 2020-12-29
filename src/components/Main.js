@@ -1,6 +1,6 @@
 
-import Intro from '../components/intro';
-import MainPage from '../components/MainPage'
+import Intro from './intro';
+import MainPage from './MainPage'
 import '../css/Main.css';
 
 function Main() {
