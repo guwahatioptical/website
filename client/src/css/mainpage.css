@@ -6,7 +6,7 @@
     height: 100vh;
 }
 .mainpage-body p{
-    font-size: 4rem;
+    font-size: 5.5vw;
     font-weight: 900;
     color: #12bbf1;
     margin: .1rem;
@@ -23,13 +23,16 @@
 @keyframes fade {
     0% {
       transform: scale(1);
+      bottom: 0em;
     }
     
     50% {
         transform: scale(1.5);
+        bottom: 1em;
     }
   
     100% {
         transform: scale(1);
+        bottom: 0em;
     }
   }
