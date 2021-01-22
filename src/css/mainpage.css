@@ -1,9 +1,11 @@
+.l{
+    cursor: pointer;
+}
 .mainpage-body{
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
 }
 .mainpage-body p{
     font-size: 5.5vw;
@@ -11,6 +13,13 @@
     color: #12bbf1;
     margin: .1rem;
     font-family: 'Courier New', Courier, monospace;
+}
+.cms{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 200vh;
+    top: 40vh;
 }
 
 .fadeIn{
@@ -23,16 +32,43 @@
 @keyframes fade {
     0% {
       transform: scale(1);
-      bottom: 0em;
+      bottom: 0vh;
     }
     
     50% {
         transform: scale(1.5);
-        bottom: 1em;
+        bottom: .5vh;
     }
   
     100% {
         transform: scale(1);
-        bottom: 0em;
+        bottom: 0vh;
     }
+  }
+
+
+  /*     navbar     */
+
+  .navbar{
+      position: fixed;
+      display: flex;
+      height: 7.5vh;
+      padding: 1.3vh;
+      align-items: center;
+      background-color: #ffffff;
+      width: 100%;
+      justify-content: space-evenly;
+      transition: .4s ease-out;
+  }
+  .navbar img{
+      width: 9vw;
+  }
+  .nav_link{
+      color: #767676;
+      font-weight: 900;
+  }
+  .links{
+      display: inherit;
+      width: 65vw;
+      justify-content: space-evenly;
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 import "../css/intro.css"
-import specsFrame from "../images/logo.png" 
+import specsFrame from "../images/logo_.png" 
 
 function Intro() {
     return (

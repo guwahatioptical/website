@@ -8,7 +8,7 @@
     z-index: 100;
     animation: stay;
     transition: linear;
-    animation-duration: 5.4s;
+    animation-duration: 3.7s;
 }
 @keyframes stay{
     0%{
@@ -30,7 +30,7 @@
 }
 .animate{
     animation: splash;
-    animation-duration: 5.4s;
+    animation-duration: 3.7s;
     height: 100vh;
     opacity: 1;
     transition: 1s cubic-bezier(1, 0, 0, 0);
@@ -58,8 +58,8 @@
     height: 8vw;
     opacity: 0;
     animation: specsframe-visible;
-    animation-delay: .5s;
-    animation-duration: 4.5s;
+    animation-delay: .3s;
+    animation-duration: 3s;
 }
 
 @keyframes specsframe-visible{
