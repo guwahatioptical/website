@@ -1,4 +1,4 @@
-import react,{useState, useEffect} from 'react'
+import {useState} from 'react'
 import Intro from './intro';
 import MainPage from './MainPage'
 import '../css/Main.css';
