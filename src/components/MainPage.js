@@ -35,6 +35,19 @@ function MainPage() {
     return (
         <div className="mainpage-body">
             <Navbar />
+            <div >
+            <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+            </div>
             <div className="cms">
             {tag.map((char,index)=><p key={index} style={{animationDelay:`${index/20}s`}} className="fadeIn">{char}</p>)}
             </div>
