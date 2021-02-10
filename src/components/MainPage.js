@@ -31,7 +31,6 @@ function Navbar(){
 }
 
 function MainPage() {
-    const tag = ['C','O','M','I','N','G','S','O','O','N','.','.','.']
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
@@ -55,8 +54,6 @@ function MainPage() {
         <div className="mainpage-body">
             <Navbar />
             <div className="cms">
-            {//tag.map((char,index)=><p key={index} style={{animationDelay:`${index/20}s`}} className="fadeIn">{char}</p>)
-            }
             <form onSubmit={handleSubmit}>
           <p>
             <label>
