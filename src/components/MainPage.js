@@ -31,9 +31,6 @@ function Navbar(){
 }
 
 function MainPage() {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [message, setMessage] = useState("")
 
           return (
         <div className="mainpage-body">
