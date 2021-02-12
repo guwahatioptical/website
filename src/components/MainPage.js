@@ -21,7 +21,7 @@ function Navbar(){
         <div className="navbar" style={{boxShadow: shadow?'#dbdbdb 0vh 0vh 3vh':'none'}}>
             <div><img onClick={scrollTop} src={logo} alt="brand logo" /></div>
             {window.innerWidth<551?
-            <div><IoMenu onClick={()=>setMenu(!menu)} /></div>:
+            <div><IoMenu className="menu l" onClick={()=>setMenu(!menu)} /></div>:
             <div className="links">
                 <div className="nav_link">About Us</div>
                 <div className="nav_link">Customer Reviews</div>

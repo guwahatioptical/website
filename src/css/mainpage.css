@@ -52,7 +52,7 @@
   .navbar{
       position: fixed;
       display: flex;
-      height: 9vh;
+      height: calc(2vw + 45px);
       padding: 1.3vh;
       align-items: center;
       background-color: #ffffff;
@@ -63,7 +63,7 @@
       
   }
     .navbar img{
-        width: 9vw;
+        width: calc(4vw + 70px);
     }
     .links{
         display: inherit;
@@ -75,13 +75,18 @@
             color: #a0a0a0;
             font-weight: 700;
         }
+    .menu{
+        font-size: calc(4vw + 12px);
+        color: #a0a0a0;
+    }
     .mob_links{
         position: absolute;
         width: 60%;
         left: 0;
-        top: 9vh;
+        top: calc(2vw + 45px);
         background-color: white;
         padding: 0;
+        font-size: 5vw;
         align-items: center;
         background-color: rgb(255, 255, 255);
         height: 91vh;
