@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
 import "../css/mainpage.css"
 import logo from "../images/logo_.png"
+import {IoMenu} from "react-icons/io5"
 
 function Navbar(){
+    const [menu, setMenu] = useState(false)
     const scrollTop = () =>{
         window.scrollTo({top: 0, behavior: 'smooth'});
       };
@@ -18,13 +20,21 @@ function Navbar(){
     return(
         <div className="navbar" style={{boxShadow: shadow?'#dbdbdb 0vh 0vh 3vh':'none'}}>
             <div><img onClick={scrollTop} src={logo} alt="brand logo" /></div>
+            {window.innerWidth<551?
+            <div><IoMenu onClick={()=>setMenu(!menu)} /></div>:
             <div className="links">
                 <div className="nav_link">About Us</div>
                 <div className="nav_link">Customer Reviews</div>
-                <div className="nav_link">Our Products</div>
+                <div className="nav_link">Gallery</div>
                 <div className="nav_link">Contact Us</div>
-                <div className="nav_link">Opening Hours</div>
                 <div className="nav_link">Locate Us</div>
+            </div>}
+            <div style={menu && window.innerWidth<551?{transform:'translateX(0vw)'}:{transform:'translateX(-80vw)'}} className="mob_links">
+            <div className="nav_link">About Us</div>
+            <div className="nav_link">Customer Reviews</div>
+            <div className="nav_link">Gallery</div>
+            <div className="nav_link">Contact Us</div>
+            <div className="nav_link">Locate Us</div>
             </div>
         </div>
     )

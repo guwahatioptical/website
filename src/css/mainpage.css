@@ -52,23 +52,41 @@
   .navbar{
       position: fixed;
       display: flex;
-      height: 7.5vh;
+      height: 9vh;
       padding: 1.3vh;
       align-items: center;
       background-color: #ffffff;
-      width: 100%;
-      justify-content: space-evenly;
+      width: 90%;
+      padding: 0% 10%;
+      justify-content: space-between;
       transition: .4s ease-out;
+      
   }
-  .navbar img{
-      width: 9vw;
-  }
-  .nav_link{
-      color: #767676;
-      font-weight: 900;
-  }
-  .links{
-      display: inherit;
-      width: 65vw;
-      justify-content: space-evenly;
-  }
+    .navbar img{
+        width: 9vw;
+    }
+    .links{
+        display: inherit;
+        width: 65vw;
+        font-size: calc(.7vw + 7px);
+        justify-content: space-evenly;
+    }
+        .nav_link{
+            color: #a0a0a0;
+            font-weight: 700;
+        }
+    .mob_links{
+        position: absolute;
+        width: 60%;
+        left: 0;
+        top: 9vh;
+        background-color: white;
+        padding: 0;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        height: 91vh;
+        transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+        .mob_links .nav_link{
+            margin: 2vh auto;
+        }
