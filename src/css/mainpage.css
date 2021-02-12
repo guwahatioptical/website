@@ -78,6 +78,7 @@
     .menu{
         font-size: calc(4vw + 12px);
         color: #a0a0a0;
+        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .mob_links{
         position: absolute;
@@ -86,7 +87,7 @@
         top: calc(2vw + 45px);
         background-color: white;
         padding: 0;
-        font-size: 5vw;
+        font-size: 4vw;
         align-items: center;
         background-color: rgb(255, 255, 255);
         height: 91vh;

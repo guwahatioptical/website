@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "../css/mainpage.css"
 import logo from "../images/logo_.png"
 import {IoMenu} from "react-icons/io5"
+import {BiMenuAltRight} from "react-icons/bi"
 
 function Navbar(){
     const [menu, setMenu] = useState(false)
@@ -21,7 +22,7 @@ function Navbar(){
         <div className="navbar" style={{boxShadow: shadow?'#dbdbdb 0vh 0vh 3vh':'none'}}>
             <div><img onClick={scrollTop} src={logo} alt="brand logo" /></div>
             {window.innerWidth<551?
-            <div><IoMenu className="menu l" onClick={()=>setMenu(!menu)} /></div>:
+            <div className="menu l">{menu?<BiMenuAltRight onClick={()=>setMenu(!menu)} />:<IoMenu onClick={()=>setMenu(!menu)} />}</div>:
             <div className="links">
                 <div className="nav_link">About Us</div>
                 <div className="nav_link">Customer Reviews</div>
