@@ -45,7 +45,7 @@ function Navbar(){
 function Loaction() {
     return(
         <div style={{ height: '80vh', width: '60vh' }}>
-            <Iframe 
+            {/* <Iframe 
             src="https://www.google.com/maps/embed/v1/place
   ?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
   &q=Eiffel+Tower,Paris+France"
@@ -54,7 +54,7 @@ function Loaction() {
         id="myId"
         className="myClassname"
         display="initial"
-        position="relative"/>
+        position="relative"/> */}
         </div>
     )
 }
