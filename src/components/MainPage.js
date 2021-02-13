@@ -3,6 +3,7 @@ import "../css/mainpage.css"
 import logo from "../images/logo_.png"
 import {IoMenu} from "react-icons/io5"
 import {BiMenuAltRight} from "react-icons/bi"
+import Iframe from 'react-iframe'
 
 function Navbar(){
     const [menu, setMenu] = useState(false)
@@ -41,13 +42,30 @@ function Navbar(){
     )
 }
 
+function Loaction() {
+    return(
+        <div style={{ height: '80vh', width: '60vh' }}>
+            <Iframe 
+            src="https://www.google.com/maps/embed/v1/place
+  ?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
+  &q=Eiffel+Tower,Paris+France"
+        width="450px"
+        height="450px"
+        id="myId"
+        className="myClassname"
+        display="initial"
+        position="relative"/>
+        </div>
+    )
+}
+
 function MainPage() {
 
           return (
         <div className="mainpage-body">
             <Navbar />
             <div className="cms">
-           
+                <Loaction />
             </div>
         </div>
     )
