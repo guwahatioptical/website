@@ -15,14 +15,11 @@ function Slide() {
         frame2,
         frame4
     ]
-     window.addEventListener("load", () =>
-       setTimeout(() => {
-         setInterval(() => {
-           setFrame((preFrame) => (preFrame + 1) % imgs.length);
-           console.log(frame);
-         }, 3000);
-       }, 3700)
-     );
+    window.addEventListener("load", () => {setInterval(() => {
+        setFrame(preFrame => ((preFrame + 1) % imgs.length));
+        console.log(frame);
+    }, 3000);
+    });
     const tags = [
       [`Look better`, `and live better.`],
       ["See better.", "Look perfect."],
