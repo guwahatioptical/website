@@ -1,0 +1,113 @@
+.carousel{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    overflow: hidden;
+}
+.frame{
+    display: flex;
+    width: 40%;
+    height: 80vh;
+    align-items: flex-end;
+}
+.frame img{
+    width: 40vw;
+    opacity: 0;
+    animation: frame 3s ease-in-out infinite;
+}
+@keyframes frame{
+    0%{
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+    5%{
+        opacity: 0;
+        transform: translateX(7vw);
+    }
+    15%{
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+    85%{
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+    95%{
+        opacity: 0;
+        transform: translateX(-7vw);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-10vw);
+    }
+}
+.tagline{
+    display: flex;
+    width: 45%;
+    height: 77vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.tag{
+    display: block;
+    color: #a0a0a0;  
+    font-size: calc(20px + 3vw);
+    font-weight: 900;
+    animation: tag_slide 3s ease-in-out infinite;
+
+}
+@keyframes tag_slide{
+    0%{
+        opacity: 0;
+        transform: translateY(-5vh);
+    }
+    5%{
+        opacity: 0;
+        transform: translateY(-3vh);
+    }
+    15%{
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+    85%{
+        opacity: 1;
+        transform: translateY(0vh);
+    }
+    95%{
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+}
+
+
+/* responsive */
+
+@media only screen and (max-width: 900px) {
+  .carousel{
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+  }
+  .frame{
+      height: 20%;
+      width: auto;
+      align-items: center;
+      justify-content: center;
+  }
+  .tagline{
+      height: 20%;
+      width: 80%;
+      align-items: center;
+      font-size: calc(15px + 4vw);
+  }
+  .frame img{
+      width: calc(150px + 25vw);
+  }
+}
