@@ -73,6 +73,7 @@
     .menu{
         font-size: calc(4vw + 12px);
         color: #a0a0a0;
+        display: none;
         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .mob_links{
@@ -80,18 +81,26 @@
         width: 100%;
         left: 0;
         top: calc(2vw + 45px);
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         padding: 0;
         font-size: 4vw;
         justify-content: center;
         align-items: center;
-        background-color: rgb(255, 255, 255);
         height: 91vh;
         transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
         .mob_links .nav_link{
             margin: 2vh auto;
         }
+    
+@media only screen and (max-width: 551px) {
+    .menu{
+        display: block;
+    }
+    .links{
+        display: none;
+    }
+}
 
 /* --------- Contact ----------*/
 

@@ -9,7 +9,6 @@ import Carousel from "./Carousel";
 
 function Navbar(){
   const [menu, setMenu] = useState(false)
-  const [width, setWidth] = useState()
     const scrollTop = () =>{
         window.scrollTo({top: 0, behavior: 'smooth'});
       };
@@ -21,22 +20,19 @@ function Navbar(){
             setShadow(false)    
          }  
   }
-    window.addEventListener('load', ()=>setWidth(window.innerWidth))
-    window.addEventListener('resize', ()=>setWidth(window.innerWidth))
     window.addEventListener('scroll', checkShadow)
     return(
         <div className="navbar" style={{boxShadow: shadow?'#dbdbdb 0vh 0vh 3vh':'none',backgroundColor: shadow?'#fff':'none'}}>
             <div><img onClick={scrollTop} src={logo} alt="brand logo" /></div>
-            {width<551?
-            <div className="menu l">{menu?<BiMenuAltRight onClick={()=>setMenu(!menu)} />:<IoMenu onClick={()=>setMenu(!menu)} />}</div>:
+            <div className="menu l">{menu?<BiMenuAltRight onClick={()=>setMenu(!menu)} />:<IoMenu onClick={()=>setMenu(!menu)} />}</div>
             <div className="links">
                 <div className="nav_link">About Us</div>
                 <div className="nav_link">Customer Reviews</div>
                 <div className="nav_link">Gallery</div>
                 <div className="nav_link">Contact Us</div>
                 <div className="nav_link">Locate Us</div>
-            </div>}
-            <div style={menu && window.innerWidth<551?{transform:'translateX(0vw)'}:{transform:'translateX(-100vw)'}} className="mob_links">
+            </div>
+            <div style={menu && window.innerWidth<551?{transform:'translateX(0vw)'}:{transform:'translateX(-100%)'}} className="mob_links">
             <div className="nav_link">About Us</div>
             <div className="nav_link">Customer Reviews</div>
             <div className="nav_link">Gallery</div>

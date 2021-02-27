@@ -5,15 +5,13 @@ import '../css/Main.css';
 
 function Main() {
   const [splash, setSplash] = useState(true)
-  window.addEventListener('load',()=>{
-    setTimeout(()=>{
+  const intro = () =>
+    setTimeout(() => {
       setSplash(false)
-    },3700)
-  })
+    }, 3700)
   return (
     <div className="App">
-      {splash?<Intro />:null}
-      <MainPage />
+      {splash ? <Intro onload={ intro() } />:<MainPage />}
     </div>
   );
 }

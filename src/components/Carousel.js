@@ -7,19 +7,13 @@ import frame4 from "../images/carousel/frame4.webp";
 
 
 
-function Slide() {
-    const [frame, setFrame] = useState(0)
+function Slide({frame}) {
     const imgs = [
         frame1,
         frame3,
         frame2,
         frame4
     ]
-    window.addEventListener("load", () => {setInterval(() => {
-        setFrame(preFrame => ((preFrame + 1) % imgs.length));
-        console.log(frame);
-    }, 3000);
-    });
     const tags = [
       [`Look better`, `and live better.`],
       ["See better.", "Look perfect."],
@@ -41,9 +35,14 @@ function Slide() {
 }
 
 export default function Carousel({imgs}) {
+  const [frame, setFrame] = useState(0)
+    const startSlide = () => setInterval(() => {
+        setFrame(preFrame => ((preFrame + 1) % 4));
+        console.log(frame);
+    }, 3000);
     return (
         <div className="carousel">
-            <Slide />
+            <Slide onload={startSlide()} frame={frame} />
         </div>
     )
 }
