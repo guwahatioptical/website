@@ -14,7 +14,6 @@
 }
 .frame img{
     width: 40vw;
-    opacity: 0;
     animation: frame 3s ease-in-out infinite;
 }
 @keyframes frame{
