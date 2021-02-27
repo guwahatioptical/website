@@ -20,33 +20,33 @@
 @keyframes frame{
     0%{
         opacity: 0;
+        transform: translateX(20vw);
+    }
+    10%{
+        opacity: 0;
         transform: translateX(10vw);
     }
-    5%{
-        opacity: 0;
-        transform: translateX(7vw);
-    }
-    15%{
+    20%{
         opacity: 1;
         transform: translateX(0vw);
     }
-    85%{
+    80%{
         opacity: 1;
         transform: translateX(0vw);
     }
-    95%{
+    90%{
         opacity: 0;
-        transform: translateX(-7vw);
+        transform: translateX(-10vw);
     }
     100%{
         opacity: 0;
-        transform: translateX(-10vw);
+        transform: translateX(-20vw);
     }
 }
 .tagline{
     display: flex;
     width: 45%;
-    height: 77vh;
+    height: 76vh;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
@@ -64,19 +64,19 @@
         opacity: 0;
         transform: translateY(-5vh);
     }
-    5%{
+    10%{
         opacity: 0;
         transform: translateY(-3vh);
     }
-    15%{
+    20%{
         opacity: 1;
         transform: translateY(0vh);
     }
-    85%{
+    80%{
         opacity: 1;
         transform: translateY(0vh);
     }
-    95%{
+    90%{
         opacity: 0;
         transform: translateY(3vh);
     }
