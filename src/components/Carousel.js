@@ -34,15 +34,14 @@ function Slide({frame}) {
     );
 }
 
-export default function Carousel({imgs}) {
+export default function Carousel() {
   const [frame, setFrame] = useState(0)
-    const startSlide = () => setInterval(() => {
+  window.addEventListener('load', ()=>setInterval(() => {
         setFrame(preFrame => ((preFrame + 1) % 4));
-        console.log(frame);
-    }, 3000);
+    }, 3000))
     return (
         <div className="carousel">
-            <Slide onload={startSlide()} frame={frame} />
+        <Slide frame={frame} />
         </div>
     )
 }

@@ -11,7 +11,8 @@ function Main() {
     }, 3700)
   return (
     <div className="App">
-      {splash ? <Intro onload={ intro() } />:<MainPage />}
+      {splash ? <Intro onload={intro()} /> : null}
+      <MainPage />
     </div>
   );
 }
