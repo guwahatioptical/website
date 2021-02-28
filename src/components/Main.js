@@ -12,7 +12,7 @@ function Main() {
   return (
     <div className="App">
       {splash ? <Intro onload={intro()} /> : null}
-      <MainPage />
+      <MainPage  />
     </div>
   );
 }

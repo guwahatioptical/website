@@ -7,10 +7,9 @@
     flex-direction: column;
     width: 100%;
 }
-.cms{
-    position: relative;
+.start{
+    position: absolute;
     display: flex;
-    flex-direction: row;
     width: 100%;
     margin: 0px;
     padding: 0px;

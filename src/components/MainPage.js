@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import "../css/mainpage.css"
 import logo from "../images/logo_.png"
 import { IoMenu } from "react-icons/io5";
-// import Iframe from 'react-iframe'
+import Iframe from 'react-iframe'
 import {BiMenuAltRight} from "react-icons/bi"
 import Carousel from "./Carousel";
 // import Chatbox from "./ChatBox";
@@ -43,31 +43,27 @@ function Navbar(){
     )
 }
 
-// function Loaction() {
-//     return (
-//       <div style={{ height: "80vh", width: "60vh" }}>
-//         <Iframe
-//           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
-//     &q=Commerce College, Commercial Point, 1st Floor, Kabita Mansion, Rajgarh Link Rd, near Guwahati, Chandmari, Guwahati, Assam"
-//           width="450px"
-//           height="450px"
-//           className="myClassname"
-//           display="initial"
-//           position="relative"
-//         />
-//       </div>
-//     );
-// }
+function Location() {
+    return (
+      <div style={{ height: "80vh", width: "60vh" }}>
+        <Iframe
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
+    &q=Commerce College, Commercial Point, 1st Floor, Kabita Mansion, Rajgarh Link Rd, near Guwahati, Chandmari, Guwahati, Assam"
+          className="locate"
+          display="initial"
+        />
+      </div>
+    );
+}
 
-function MainPage() {
+function MainPage({frame}) {
 
           return (
             <div className="mainpage-body">
               <Navbar />
-              <div className="cms">
-                <Carousel />
+                <Carousel frame={frame}  className="start"/>
+                <Location />
                 {/* <Chatbox /> */}
-              </div>
             </div>
           );
 }

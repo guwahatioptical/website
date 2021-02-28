@@ -7,41 +7,49 @@ import frame4 from "../images/carousel/frame4.webp";
 
 
 
-function Slide({frame}) {
-    const imgs = [
-        frame1,
-        frame3,
-        frame2,
-        frame4
-    ]
-    const tags = [
-      [`Look better`, `and live better.`],
-      ["See better.", "Look perfect."],
-      ["Vision for", "a better life."],
-      ["See what", "you’re missing…"],
-    ];
-    
+function Slide() {
+  const imgs = [
+    frame1,
+    frame3,
+    frame2,
+    frame4
+  ]
+  const tags = [
+    [`Look better`, `and live better.`],
+    ["See better.", "Look perfect."],
+    ["Vision for", "a better life."],
+    ["See what", "you’re missing…"],
+  ];
+  const [frame, setFrame] = useState(0)
+  const [animate, setAnimate] = useState(false)
+
+  window.addEventListener('load', () =>{ setInterval(() => {
+    setFrame(preFrame => ((preFrame + 1) % 4));
+  }, 3000)
+      setAnimate(true);
+})
     return (
       <>
-        <div className="tagline">
+        <div className={`tagline ${animate ? "tag_slide" : ""}`}>
           <div className="tag">{tags[frame][0]}</div>
           <div className="tag">{tags[frame][1]}</div>
         </div>
         <div className="frame">
-          <img src={imgs[frame]} alt="img1" />
+          <img
+            className={animate ? "frame_animate" : ""}
+            src={imgs[frame]}
+            alt="img1"
+          />
         </div>
       </>
     );
 }
 
 export default function Carousel() {
-  const [frame, setFrame] = useState(0)
-  window.addEventListener('load', ()=>setInterval(() => {
-        setFrame(preFrame => ((preFrame + 1) % 4));
-    }, 3000))
+  
     return (
         <div className="carousel">
-        <Slide frame={frame} />
+        <Slide />
         </div>
     )
 }
