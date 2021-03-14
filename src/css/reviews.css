@@ -1,0 +1,33 @@
+/****** REVIEWS ******/
+
+
+
+
+
+
+
+
+
+    /**review**/
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+    .review-container{
+        max-width: 75%;
+        border-radius: 15px;
+        padding: 5%;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        margin: 1vh 3vw;
+    }
+    .review-container .name{
+        font-family: 'Dosis', sans-serif;
+        font-size: 5vw;
+    }
+    .review-container .review{
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 4.2vw;
+    }
+    .review-heading{
+        color: grey;
+        margin: 2vh 5vw;
+    }
