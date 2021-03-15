@@ -144,9 +144,46 @@ function MainPage() {
               <Reviews />
               <AboutUs />
               <Location />
+              <div className="timing">
+                <div className="heading">Opening Hours</div>
+                <div>
+                  <li>
+                    <span>Day</span>
+                    <span>Timing</span>
+                  </li>
+                  <li>
+                    <span>Monday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Tuesday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Wednesday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Thursday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Friday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Saturday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Sunday</span>
+                    <span>8:00 AM-9:00 PM</span>
+                  </li>
+                </div>
+              </div>
               <div className="endname"></div>
               <ContactDetails />
-                {/* <Chatbox /> */}
+              {/* <Chatbox /> */}
             </div>
           );
 }

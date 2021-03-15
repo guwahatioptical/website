@@ -21,11 +21,11 @@
     }
     .review-container .name{
         font-family: 'Dosis', sans-serif;
-        font-size: 5vw;
+        font-size: calc(10px+4vw);
     }
     .review-container .review{
         font-family: 'Nunito Sans', sans-serif;
-        font-size: 4.2vw;
+        font-size: calc(10px + 1vw);
     }
     .review-heading{
         color: grey;

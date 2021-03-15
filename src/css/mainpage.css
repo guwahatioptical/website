@@ -57,7 +57,6 @@ a{
       padding: 0% 10%;
       justify-content: space-between;
       transition: .2s ease-in-out;
-      
   }
     .navbar img{
         width: calc(4vw + 70px);
@@ -198,7 +197,7 @@ a{
     width: 100%;
 }
 .locate{
-    height: 50vh;
+    height: 45vh;
     width: 90%;
 }
 
@@ -274,4 +273,26 @@ a{
 }
 .details{
     text-align: left;
+}
+
+/***** Opening hours *******/
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+.timing{
+    width: 100%;
+    background: linear-gradient(to top,#f3f8fb,white,white);
+    transform: translateY(5vh);
+}
+.timing li{
+    list-style: none;
+    padding: 0% 12%;
+    display: flex;
+    font-family: 'Syne Mono', monospace;
+    justify-content: space-between;
+    color: rgb(110, 110, 110);
+}
+.timing li:nth-child(1) span{
+    margin-bottom: 2px;
+}
+.timing li:nth-child(1){
+    font-weight: 700;
 }
