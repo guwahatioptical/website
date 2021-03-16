@@ -1,21 +1,62 @@
 import React,{useState} from 'react'
 import "../css/mainpage.css"
-import logo from "../images/logo_.png"
+import {Link} from "react-scroll"
+import{
+  logo,
+  dkny,
+  essilor,
+  hoya,
+  idee,
+  prada,
+  puma,
+  RayBanCompany,
+  silhovette,
+  vogue,
+  youngeroptics,
+  g834,
+  g856,
+  g1244,
+  g1248,
+  g1256,
+  g1260,
+  g1264,
+  g1317,
+  g1321,
+  g1325,
+  g1329,
+  g1333,
+  g1337,
+  g1389,
+  g1393,
+  g1397,
+  g1401,
+  g1405,
+  g1451,
+  g1455,
+  g1459,
+  g1463,
+  g1467,
+  g1471,
+  g1475,
+  g1479,
+  g1480,
+  g1485,
+  g1491,
+  g1494,
+  g1498,
+} from "../images/image";
 import { IoMenu } from "react-icons/io5";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { FaFacebookF, FaRegAddressCard } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import Iframe from 'react-iframe'
-import {BiMenuAltRight} from "react-icons/bi"
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import Carousel from "./Carousel";
 import Reviews from './Reviews'
 // import Chatbox from "./ChatBox";
 
 function Navbar(){
   const [menu, setMenu] = useState(false)
-    const scrollTop = () =>{
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      };
     const [shadow, setShadow] = useState(false)
     const checkShadow = () =>{
         if (!shadow && window.pageYOffset > 1){
@@ -25,31 +66,92 @@ function Navbar(){
          }  
   }
     window.addEventListener('scroll', checkShadow)
-    return(
-        <div className="navbar" style={{boxShadow: shadow?'#dbdbdb 0vh 0vh 3vh':'none',backgroundColor: shadow?'#fff':'none'}}>
-            <div><img onClick={scrollTop} src={logo} alt="brand logo" /></div>
-            <div className="menu l">{menu?<BiMenuAltRight onClick={()=>setMenu(!menu)} />:<IoMenu onClick={()=>setMenu(!menu)} />}</div>
-            <div className="links">
-                <div className="nav_link">Customer Reviews</div>
-                <div className="nav_link">Brands</div>
-                <div className="nav_link">Gallery</div>
-                <div className="nav_link">Opening Hours</div>
-                <div className="nav_link">Locate Us</div>
-            </div>
-            <div style={menu && window.innerWidth<551?{transform:'translateX(0vw)'}:{transform:'translateX(-100%)'}} className="mob_links">
-            <div className="nav_link">About Us</div>
-            <div className="nav_link">Customer Reviews</div>
-            <div className="nav_link">Gallery</div>
-            <div className="nav_link">Contact Us</div>
-            <div className="nav_link">Locate Us</div>
-            </div>
+    return (
+      <div
+        className="navbar"
+        style={{
+          boxShadow: shadow ? "#dbdbdb 0vh 0vh 3vh" : "none",
+          backgroundColor: shadow ? "#fff" : "none",
+        }}
+      >
+        <Link to="home" spy={true} smooth={true}>
+          <div onClick={() => setMenu(false)}>
+            <img src={logo} alt="brand logo" />
+          </div>
+        </Link>
+        <div className="menu l">
+          {menu ? (
+            <MdKeyboardArrowLeft onClick={() => setMenu(!menu)} />
+          ) : (
+            <IoMenu onClick={() => setMenu(!menu)} />
+          )}
         </div>
-    )
+        <div className="links">
+          <Link to="gallery" spy={true} smooth={true}>
+            <div className="nav_link">Gallery</div>
+          </Link>
+          <Link to="reviews" spy={true} smooth={true}>
+            <div className="nav_link">Customer Reviews</div>
+          </Link>
+          <Link to="aboutus" spy={true} smooth={true}>
+            <div className="nav_link">About Us</div>
+          </Link>
+          <Link to="location" spy={true} smooth={true}>
+            <div className="nav_link">Locate Us</div>
+          </Link>
+          <Link to="timing" spy={true} smooth={true}>
+            <div className="nav_link">Opening Us</div>
+          </Link>
+          <Link to="contact" spy={true} smooth={true}>
+            <div className="nav_link">Get in Touch</div>
+          </Link>
+        </div>
+        <div
+          style={
+            menu && window.innerWidth < 551
+              ? { transform: "translateX(0vw)" }
+              : { transform: "translateX(-100%)" }
+          }
+          className="mob_links"
+        >
+          <Link to="gallery" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              Gallery
+            </div>
+          </Link>
+          <Link to="reviews" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              Customer Reviews
+            </div>
+          </Link>
+          <Link to="aboutus" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              About Us
+            </div>
+          </Link>
+          <Link to="location" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              Locate Us
+            </div>
+          </Link>
+          <Link to="timing" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              Opening Hours
+            </div>
+          </Link>
+          <Link to="contact" spy={true} smooth={true}>
+            <div onClick={() => setMenu(!menu)} className="nav_link">
+              Get in Touch
+            </div>
+          </Link>
+        </div>
+      </div>
+    );
 }
 
 function Location() {
     return (
-      <div className="locate-container">
+      <div id="location" className="locate-container">
         <h3 className="heading">Locate Us</h3>
         <Iframe
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
@@ -63,7 +165,7 @@ function Location() {
 
 function AboutUs() {
   return (
-    <div className="aboutus-container">
+    <div id="aboutus" className="aboutus-container">
       <h3 className="heading">About Us</h3>
     <div className="aboutus">
       We are dedicated to providing you with the highest standards
@@ -83,7 +185,7 @@ function AboutUs() {
 
 function ContactDetails() {
   return (
-    <div className="footer">
+    <div id="contact" className="footer">
       <h3 className="footer-heading">Get in Touch</h3>
       <div className="contact-details-body">
         <div className="socialbar">
@@ -135,17 +237,89 @@ function ContactDetails() {
   );
 }
 
+function Gallery() {
+  const images = [
+    g834,
+    g856,
+    g1244,
+    g1248,
+    g1256,
+    g1260,
+    g1264,
+    g1317,
+    g1321,
+    g1325,
+    g1329,
+    g1333,
+    g1337,
+    g1389,
+    g1393,
+    g1397,
+    g1401,
+    g1405,
+    g1451,
+    g1455,
+    g1459,
+    g1463,
+    g1467,
+    g1471,
+    g1475,
+    g1479,
+    g1480,
+    g1485,
+    g1491,
+    g1494,
+    g1498,
+  ];
+
+  return (
+    <div id="gallery" className="gallery">
+      <div className="photos">
+        <h3 className="heading">Gallery</h3>
+        {images.map((image, index) => (
+          <img
+            style={{ margin: "1vh 2vw" }}
+            key={index}
+            src={image}
+            alt="img"
+          />
+        ))}
+      </div>
+      <div className="brands">
+        <h3 className="heading">Brands Available</h3>
+        <li style={{ marginTop: "4vh" }}>
+          <img src={dkny} alt="brand" />
+          <img src={essilor} alt="brand" />
+          <img src={silhovette} alt="brand" />
+          <img src={idee} alt="brand" />
+        </li>
+        <li>
+          <img src={prada} alt="brand" />
+          <img src={puma} alt="brand" />
+          <img src={RayBanCompany} alt="brand" />
+          <img src={hoya} alt="brand" />
+        </li>
+        <li style={{ marginTop: "3vh" }}>
+          <img src={vogue} alt="brand" />
+          <img src={youngeroptics} alt="brand" />
+        </li>
+      </div>
+    </div>
+  );
+}
+
 function MainPage() {
 
           return (
             <div className="mainpage-body">
               <Navbar />
               <Carousel className="start" />
+              <Gallery />
               <Reviews />
               <AboutUs />
               <Location />
-              <div className="timing">
-                <div className="heading">Opening Hours</div>
+              <div id="timing" className="timing">
+                <h3 className="heading">Opening Hours</h3>
                 <div>
                   <li>
                     <span>Day</span>

@@ -87,21 +87,14 @@ a{
         font-size: 4vw;
         justify-content: center;
         align-items: center;
-        height: 91vh;
+        height: 100vh;
         transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
         .mob_links .nav_link{
             margin: 2vh auto;
         }
     
-@media only screen and (max-width: 551px) {
-    .menu{
-        display: block;
-    }
-    .links{
-        display: none;
-    }
-}
+
 
 /* --------- Contact ----------*/
 
@@ -195,6 +188,7 @@ a{
 /********Location************/
 .locate-container{
     width: 100%;
+    padding-top: calc(2vw + 45px);
 }
 .locate{
     height: 45vh;
@@ -205,6 +199,7 @@ a{
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .aboutus-container{
     display: flex;
+    padding-top: calc(2vw + 45px);
     flex-direction: column;
     margin: 3vh 5vw;
 }
@@ -279,6 +274,7 @@ a{
 @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
 .timing{
     width: 100%;
+    padding-top: calc(2vw + 45px);
     background: linear-gradient(to top,#f3f8fb,white,white);
     transform: translateY(5vh);
 }
@@ -295,4 +291,21 @@ a{
 }
 .timing li:nth-child(1){
     font-weight: 700;
+}
+
+.gallery{
+    padding-top: calc(2vw + 45px);
+}
+
+
+@media only screen and (max-width: 551px) {
+    .menu{
+        display: block;
+    }
+    .links{
+        display: none;
+    }
+    .photos img{
+        height: 8vh;
+    }
 }

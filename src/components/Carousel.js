@@ -1,9 +1,6 @@
 import React, {useState} from 'react'
 import '../css/carousel.css'
-import frame1 from '../images/carousel/frame1.webp'
-import frame2 from "../images/carousel/frame2.webp";
-import frame3 from "../images/carousel/frame3.webp";
-import frame4 from "../images/carousel/frame4.webp";
+import {frame1, frame2, frame3, frame4} from '../images/image'
 
 
 
@@ -48,7 +45,7 @@ function Slide() {
 export default function Carousel() {
   
     return (
-        <div className="carousel">
+        <div id="home" className="carousel">
         <Slide />
         </div>
     )
