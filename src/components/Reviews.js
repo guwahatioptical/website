@@ -1,39 +1,44 @@
 import React from 'react'
 import '../css/reviews.css'
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 function Review({ r_index, fullName, review, rating, color }) {
-    const rates = rate =>{
-      switch (rate) {
-        case 1:
-          return [1, 0, 0, 0, 0];
-        case 1.5:
-          return [1, 0.5, 0, 0, 0];
-        case 2:
-          return [1, 1, 0, 0, 0];
-        case 2.5:
-          return [1, 1, 0.5, 0, 0];
-        case 3:
-          return [1, 1, 1, 0, 0];
-        case 3.5:
-          return [1, 1, 1, 0.5, 0];
-        case 4:
-          return [1, 1, 1, 1, 0];
-        case 4.5:
-          return [1, 1, 1, 1, 0.5];
-        case 5:
-          return [1, 1, 1, 1, 1];
-        default:
-          return 0;
-      }
+  const rates = rate => {
+    switch (rate) {
+      case 1:
+        return [1, 0, 0, 0, 0];
+      case 1.5:
+        return [1, 0.5, 0, 0, 0];
+      case 2:
+        return [1, 1, 0, 0, 0];
+      case 2.5:
+        return [1, 1, 0.5, 0, 0];
+      case 3:
+        return [1, 1, 1, 0, 0];
+      case 3.5:
+        return [1, 1, 1, 0.5, 0];
+      case 4:
+        return [1, 1, 1, 1, 0];
+      case 4.5:
+        return [1, 1, 1, 1, 0.5];
+      case 5:
+        return [1, 1, 1, 1, 1];
+      default:
+        return 0;
+    }
   }
 
-    return (
-        <div
-          style={{
-            backgroundColor: color,
-            float: r_index % 2 === 0 ? "left" : "right",
-          }}
+  return (
+    <div
+      style={{
+        backgroundColor: color,
+        float: r_index % 2 === 0 ? "left" : "right",
+      }}
+      data-aos="flip-up"
           className="review-container"
         >
           <div className="name">

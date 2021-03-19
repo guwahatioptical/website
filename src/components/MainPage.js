@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import "../css/mainpage.css"
-import {Link} from "react-scroll"
+import { Link } from "react-scroll"
+import AOS from "aos"
+import 'aos/dist/aos.css'
 import{
   logo,
   dkny,
@@ -53,7 +55,9 @@ import Iframe from 'react-iframe'
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Carousel from "./Carousel";
 import Reviews from './Reviews'
-// import Chatbox from "./ChatBox";
+import Chatbox from "./ChatBox";
+
+AOS.init();
 
 function Navbar(){
   const [menu, setMenu] = useState(false)
@@ -277,7 +281,7 @@ function Gallery() {
       <div className="photos">
         <h3 className="heading">Gallery</h3>
         {images.map((image, index) => (
-          <img
+          <img data-aos="fade-up"
             style={{ margin: "1vh 2vw" }}
             key={index}
             src={image}
@@ -288,20 +292,20 @@ function Gallery() {
       <div className="brands">
         <h3 className="heading">Brands Available</h3>
         <li style={{ marginTop: "4vh" }}>
-          <img src={dkny} alt="brand" />
-          <img src={essilor} alt="brand" />
-          <img src={silhovette} alt="brand" />
-          <img src={idee} alt="brand" />
+          <img data-aos="zoom-in-up" src={dkny} alt="brand" />
+          <img data-aos="zoom-in-up" src={essilor} alt="brand" />
+          <img data-aos="zoom-in-up" src={silhovette} alt="brand" />
+          <img data-aos="zoom-in-up" src={idee} alt="brand" />
         </li>
         <li>
-          <img src={prada} alt="brand" />
-          <img src={puma} alt="brand" />
-          <img src={RayBanCompany} alt="brand" />
-          <img src={hoya} alt="brand" />
+          <img data-aos="zoom-in-up" src={prada} alt="brand" />
+          <img data-aos="zoom-in-up" src={puma} alt="brand" />
+          <img data-aos="zoom-in-up" src={RayBanCompany} alt="brand" />
+          <img data-aos="zoom-in-up" src={hoya} alt="brand" />
         </li>
         <li style={{ marginTop: "3vh" }}>
-          <img src={vogue} alt="brand" />
-          <img src={youngeroptics} alt="brand" />
+          <img data-aos="zoom-in-up" src={vogue} alt="brand" />
+          <img data-aos="zoom-in-up" src={youngeroptics} alt="brand" />
         </li>
       </div>
     </div>
@@ -313,6 +317,7 @@ function MainPage() {
           return (
             <div className="mainpage-body">
               <Navbar />
+              <Chatbox />
               <Carousel className="start" />
               <Gallery />
               <Reviews />
@@ -327,31 +332,31 @@ function MainPage() {
                   </li>
                   <li>
                     <span>Monday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Tuesday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Wednesday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Thursday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Friday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Saturday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>Closed</span>
                   </li>
                   <li>
                     <span>Sunday</span>
-                    <span>8:00 AM-9:00 PM</span>
+                    <span>Closed</span>
                   </li>
                 </div>
               </div>
