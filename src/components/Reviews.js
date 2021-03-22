@@ -133,7 +133,7 @@ function Reviews() {
   }
     return (
       <div id="reviews">
-        <h3 className="review-heading">Happy Customers</h3>
+        <h3 data-aos="fade-in" className="review-heading">Happy Customers</h3>
         <div className="reviews">  {getReviews().map((review, index) => 
           <Review key={index} r_index={index} {...review} />
         )

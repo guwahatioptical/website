@@ -156,7 +156,7 @@ function Navbar(){
 function Location() {
     return (
       <div id="location" className="locate-container">
-        <h3 className="heading">Locate Us</h3>
+        <h3 data-aos="fade" className="heading">Locate Us</h3>
         <Iframe
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
     &q=Commerce College, Commercial Point, 1st Floor, Kabita Mansion, Rajgarh Link Rd, near Guwahati, Chandmari, Guwahati, Assam"
@@ -170,7 +170,7 @@ function Location() {
 function AboutUs() {
   return (
     <div id="aboutus" className="aboutus-container">
-      <h3 className="heading">About Us</h3>
+      <h3 data-aos="fade" className="heading">About Us</h3>
     <div className="aboutus">
       We are dedicated to providing you with the highest standards
       of professional eye care, together with a friendly service, quality
@@ -279,7 +279,7 @@ function Gallery() {
   return (
     <div id="gallery" className="gallery">
       <div className="photos">
-        <h3 className="heading">Gallery</h3>
+        <h3 data-aos="fade" className="heading">Gallery</h3>
         {images.map((image, index) => (
           <img data-aos="fade-up"
             style={{ margin: "1vh 2vw" }}
@@ -290,7 +290,7 @@ function Gallery() {
         ))}
       </div>
       <div className="brands">
-        <h3 className="heading">Brands Available</h3>
+        <h3 data-aos="fade-in" className="heading">Brands Available</h3>
         <li style={{ marginTop: "4vh" }}>
           <img data-aos="zoom-in-up" src={dkny} alt="brand" />
           <img data-aos="zoom-in-up" src={essilor} alt="brand" />
@@ -324,7 +324,9 @@ function MainPage() {
               <AboutUs />
               <Location />
               <div id="timing" className="timing">
-                <h3 className="heading">Opening Hours</h3>
+                <h3 className="heading">
+                  Opening Hours
+                </h3>
                 <div>
                   <li>
                     <span>Day</span>
@@ -352,11 +354,11 @@ function MainPage() {
                   </li>
                   <li>
                     <span>Saturday</span>
-                    <span>Closed</span>
+                    <span>10:00 AM-7:30 PM</span>
                   </li>
                   <li>
                     <span>Sunday</span>
-                    <span>Closed</span>
+                    <span>11:00 AM-6:30 PM</span>
                   </li>
                 </div>
               </div>
