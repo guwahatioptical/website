@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "../css/mainpage.css";
-import { AiTwotoneMessage } from "react-icons/ai";
 import { GiCrossMark } from "react-icons/gi";
 import { TextField } from "@material-ui/core";
 import axios from "axios";
 import qs from 'qs'
 
-function ChatBox() {
-  const [contact, setContact] = useState(false);
+function ChatBox({contact, setContact}) {
   const [sent, setSent] = useState(0);
   const [name, setName] = useState('');
   const [email, setEmail] = useState("");
@@ -52,21 +50,11 @@ function ChatBox() {
   
     return (
       <div>
-        <div
-          className="message_icon"
-          onClick={() => {
-            setContact(!contact);
-          }}
-        >
-          <AiTwotoneMessage
-            style={{ fontSize: "1.7em", color: "rgb(31, 255, 255)" }}
-          />
-        </div>
         {contact ? (
           <div className="chat_container">
             <div className="chat_section">
               <h3 className="chat_header">
-                Message Us
+                Say Hello
                 <GiCrossMark
                   className="cut"
                   onClick={() => {
@@ -74,54 +62,57 @@ function ChatBox() {
                   }}
                 />
               </h3>
-              {sent === 0 ?
+              {sent === 0 ? (
                 <form onSubmit={send}>
-                <TextField
-                  id="standard-basic"
-                  label="Name"
-                  autoComplete="name"
-                  onChange={(e) => setName(e.target.value)}
-                  required={true}
-                  value={name}
-                />
-                <TextField
-                  id="standard-basic"
-                  label="Email"
-                  autoComplete="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  required={true}
-                  value={email}
-                />
-                <TextField
-                  type="tel"
-                  id="standard-basic"
-                  label="Phone"
-                  onChange={(e) => setPhone(e.target.value)}
-                  value={phone}
-                />
-                <TextField
-                  rowsMax={3}
-                  size="medium"
-                  multiline={true}
-                  id="standard-basic"
-                  label="Message"
-                  onChange={(e) => setMessage(e.target.value)}
-                  required={true}
-                  value={message}
-                />
-                <button type="submit">Send</button>
-                </form> :
-                sent === 200 ?
-                  <p>Thank You!<br />
-                   For your message.<br />
-                   We will soon contact you.
-                  </p> :
-                  <p>Some thing went wrong!
-                   Please, check your internet connection
-                   or
-                   Try again later...
-                  </p>
-              }
+                  <TextField
+                    id="standard-basic"
+                    label="Name"
+                    autoComplete="name"
+                    onChange={(e) => setName(e.target.value)}
+                    required={true}
+                    value={name}
+                  />
+                  <TextField
+                    id="standard-basic"
+                    label="Email"
+                    autoComplete="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required={true}
+                    value={email}
+                  />
+                  <TextField
+                    type="tel"
+                    id="standard-basic"
+                    label="Phone"
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
+                  />
+                  <TextField
+                    rowsMax={3}
+                    size="medium"
+                    multiline={true}
+                    id="standard-basic"
+                    label="Message"
+                    onChange={(e) => setMessage(e.target.value)}
+                    required={true}
+                    value={message}
+                  />
+                  <button type="submit">Send</button>
+                </form>
+              ) : sent === 200 ? (
+                <p>
+                  Thank You!
+                  <br />
+                  For your message.
+                  <br />
+                  We will soon contact you.
+                </p>
+              ) : (
+                <p>
+                  Some thing went wrong! Please, check your internet connection
+                  or Try again later...
+                </p>
+              )}
             </div>
           </div>
         ) : null}

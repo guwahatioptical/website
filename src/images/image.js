@@ -1,9 +1,20 @@
 import logo from './logo_.webp'
 import city from "./city.jpg";
-import frame1 from "./carousel/frame1.webp";
-import frame2 from "./carousel/frame2.webp";
-import frame3 from "./carousel/frame3.webp";
-import frame4 from "./carousel/frame4.webp";
+import web1 from "./carousel/web1.webp";
+import web2 from "./carousel/web2.webp";
+import web3 from "./carousel/web3.webp";
+import web4 from "./carousel/web4.webp";
+import web5 from "./carousel/web5.webp";
+import web6 from "./carousel/web6.webp";
+import web7 from "./carousel/web7.webp";
+import web8 from "./carousel/web8.webp";
+import web9 from "./carousel/web9.webp";
+import web10 from "./carousel/web10.webp";
+import mob2 from "./carousel/mob2.webp";
+import mob3 from "./carousel/mob3.webp";
+import mob4 from "./carousel/mob4.webp";
+import mob6 from "./carousel/mob6.webp";
+import mob8 from "./carousel/mob8.webp";
 import dkny from "./brands/dkny.jpg";
 import essilor from "./brands/essilor.webp";
 import hoya from "./brands/hoya.webp";
@@ -48,10 +59,21 @@ import g1498 from "./gallery/g1498.jpg";
 export {
   logo,
   city,
-  frame1,
-  frame2,
-  frame3,
-  frame4,
+  web1,
+  web2,
+  web3,
+  web4,
+  web5,
+  web6,
+  web7,
+  web8,
+  web9,
+  web10,
+  mob2,
+  mob3,
+  mob4,
+  mob6,
+  mob8,
   dkny,
   essilor,
   hoya,
@@ -67,30 +89,30 @@ export {
   g1244,
   g1248,
   g1256,
-g1260,
-g1264,
-g1317,
-g1321,
-g1325,
-g1329,
-g1333,
-g1337,
-g1389,
-g1393,
-g1397,
-g1401,
-g1405,
-g1451,
-g1455,
-g1459,
-g1463,
-g1467,
-g1471,
-g1475,
-g1479,
-g1480,
-g1485,
-g1491,
-g1494,
-g1498
+  g1260,
+  g1264,
+  g1317,
+  g1321,
+  g1325,
+  g1329,
+  g1333,
+  g1337,
+  g1389,
+  g1393,
+  g1397,
+  g1401,
+  g1405,
+  g1451,
+  g1455,
+  g1459,
+  g1463,
+  g1467,
+  g1471,
+  g1475,
+  g1479,
+  g1480,
+  g1485,
+  g1491,
+  g1494,
+  g1498,
 };

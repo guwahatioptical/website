@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "../css/mainpage.css"
 import { Link } from "react-scroll"
 import AOS from "aos"
+import { AiTwotoneMessage } from "react-icons/ai";
 import 'aos/dist/aos.css'
 import{
   logo,
@@ -53,7 +54,7 @@ import { FaFacebookF, FaRegAddressCard } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import Iframe from 'react-iframe'
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import Carousel from "./Carousel";
+import Home from "./Home";
 import Reviews from './Reviews'
 import Chatbox from "./ChatBox";
 
@@ -74,8 +75,12 @@ function Navbar(){
       <div
         className="navbar"
         style={{
-          boxShadow: shadow ? "#dbdbdb 0vh 0vh 3vh" : "none",
-          backgroundColor: shadow ? "#fff" : "none",
+          boxShadow: shadow ? "#000 0vh 0vh 1.5vh" : "none",
+          backgroundColor: shadow | menu ? "#fff" : "rgba(255, 255, 255, 0)",
+          background:
+            shadow | menu
+              ? "#fff"
+              : "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))",
         }}
       >
         <Link to="home" spy={true} smooth={true}>
@@ -83,7 +88,12 @@ function Navbar(){
             <img src={logo} alt="brand logo" />
           </div>
         </Link>
-        <div className="menu l">
+        <div
+          className="menu l"
+          style={{
+            color: (shadow === false) & (menu === false) ? "#fff" : "#a0a0a0",
+          }}
+        >
           {menu ? (
             <MdKeyboardArrowLeft onClick={() => setMenu(!menu)} />
           ) : (
@@ -277,7 +287,7 @@ function Gallery() {
   ];
 
   return (
-    <div id="gallery" className="gallery">
+    <div id="gallery" className="gallery" style={{backgroundColor:"#fff"}}>
       <div className="photos">
         <h3 data-aos="fade" className="heading">Gallery</h3>
         {images.map((image, index) => (
@@ -313,20 +323,43 @@ function Gallery() {
 }
 
 function MainPage() {
-
+  const [contact, setContact] = useState(false);
+  const [show, setShow] = useState(false);
+  const checkshow = () => {
+    if (window.pageYOffset > 100) {
+      setShow(true);
+    } else if (window.pageYOffset <= 100) {
+      setShow(false);
+    }
+  }
+  window.addEventListener("scroll", checkshow)
           return (
             <div className="mainpage-body">
               <Navbar />
-              <Chatbox />
-              <Carousel className="start" />
+              <div className="msg_btn" >
+                Explore us
+              </div>
+              <div
+                className="message_icon"
+                onClick={() => {
+                  setContact(!contact);
+                }}
+                style={{ opacity: show ? "1" : "0" }}
+              >
+                <AiTwotoneMessage
+                  style={{ fontSize: "1.7em", color: "rgb(255, 115, 0)" }}
+                />
+              </div>
+              
+              <Chatbox contact={contact} setContact={setContact} />
+              <div className="fake"></div>
+              <Home className="start" />
               <Gallery />
               <Reviews />
               <AboutUs />
               <Location />
               <div id="timing" className="timing">
-                <h3 className="heading">
-                  Opening Hours
-                </h3>
+                <h3 className="heading">Opening Hours</h3>
                 <div>
                   <li>
                     <span>Day</span>
@@ -364,7 +397,6 @@ function MainPage() {
               </div>
               <div className="endname"></div>
               <ContactDetails />
-              {/* <Chatbox /> */}
             </div>
           );
 }

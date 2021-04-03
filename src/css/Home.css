@@ -1,0 +1,48 @@
+.carousel{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    z-index: 0;
+    overflow: hidden;
+}
+.carousel img{
+    height: 100vh;
+}
+.tagline{
+    display: flex;
+    position: fixed;
+    color: #ffffff;
+    font-weight: 900;
+    z-index: 0;
+    background-image: linear-gradient(to top ,black, rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0));
+    height: 30vh;
+    width: 100%;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 900px) {
+  .carousel{
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+  }
+  .tagline{
+      height: 45vh;
+      width: 80%;
+      padding: 10% 10% 0% 15%;
+      flex-direction: column;
+      text-align: left;
+      bottom: 0vh;
+      font-size: calc(15px + 9vw);
+  }
+  .msg_btn{
+      bottom: 10vh;
+      align-self: flex-start;
+      margin-left: 12%;
+      z-index: 6;
+      cursor: pointer;
+  }
+}
