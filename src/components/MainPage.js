@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import "../css/mainpage.css"
 import { Link } from "react-scroll"
 import AOS from "aos"
-import { AiTwotoneMessage } from "react-icons/ai";
 import 'aos/dist/aos.css'
 import{
   logo,
@@ -323,35 +322,15 @@ function Gallery() {
 }
 
 function MainPage() {
-  const [contact, setContact] = useState(false);
-  const [show, setShow] = useState(false);
-  const checkshow = () => {
-    if (window.pageYOffset > 100) {
-      setShow(true);
-    } else if (window.pageYOffset <= 100) {
-      setShow(false);
-    }
-  }
-  window.addEventListener("scroll", checkshow)
           return (
             <div className="mainpage-body">
               <Navbar />
-              <div className="msg_btn" >
+              <div
+                className="explore_us" onClick={console.log("clicked")}
+              >
                 Explore us
               </div>
-              <div
-                className="message_icon"
-                onClick={() => {
-                  setContact(!contact);
-                }}
-                style={{ opacity: show ? "1" : "0" }}
-              >
-                <AiTwotoneMessage
-                  style={{ fontSize: "1.7em", color: "rgb(255, 115, 0)" }}
-                />
-              </div>
-              
-              <Chatbox contact={contact} setContact={setContact} />
+              <Chatbox />
               <div className="fake"></div>
               <Home className="start" />
               <Gallery />

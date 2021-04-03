@@ -20,7 +20,7 @@ import {
 
 
 
-function Home({contact, setContact}) {
+function Home() {
   const [frame, setFrame] = useState(0)
   let home_images = [
     mob8,

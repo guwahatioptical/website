@@ -38,11 +38,4 @@
       bottom: 0vh;
       font-size: calc(15px + 9vw);
   }
-  .msg_btn{
-      bottom: 10vh;
-      align-self: flex-start;
-      margin-left: 12%;
-      z-index: 6;
-      cursor: pointer;
-  }
 }
