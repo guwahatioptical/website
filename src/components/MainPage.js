@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import "../css/mainpage.css"
 import { Link } from "react-scroll"
 import AOS from "aos"
@@ -60,24 +60,26 @@ import Chatbox from "./ChatBox";
 AOS.init();
 
 function Navbar(){
+  const [offsetY, setoffsetY] = useState(0)
   const [menu, setMenu] = useState(false)
-    const [shadow, setShadow] = useState(false)
-    const checkShadow = () =>{
-        if (!shadow && window.pageYOffset > 1){
-            setShadow(true)    
-         } else if (shadow && window.pageYOffset <= 1){
-            setShadow(false)    
-         }  
+  const checkShadow = () => {
+      setoffsetY(window.pageYOffset)
   }
+  
+  useEffect(() => {
     window.addEventListener('scroll', checkShadow)
+
+    return () => window.removeEventListener('scroll', checkShadow)
+  }, [])
+
     return (
       <div
         className="navbar"
         style={{
-          boxShadow: shadow ? "#000 0vh 0vh 1.5vh" : "none",
-          backgroundColor: shadow | menu ? "#fff" : "rgba(255, 255, 255, 0)",
+          boxShadow: offsetY > 1 ? "#000 0vh 0vh 1.5vh" : "none",
+          backgroundColor: offsetY > 1 | menu ? "#fff" : "rgba(255, 255, 255, 0)",
           background:
-            shadow | menu
+            offsetY > 1 | menu
               ? "#fff"
               : "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))",
         }}
@@ -90,7 +92,7 @@ function Navbar(){
         <div
           className="menu l"
           style={{
-            color: (shadow === false) & (menu === false) ? "#fff" : "#a0a0a0",
+            color: (offsetY < 1) & (menu === false) ? "#fff" : "#a0a0a0",
           }}
         >
           {menu ? (
@@ -321,15 +323,23 @@ function Gallery() {
   );
 }
 
+function Explore() {
+  return (
+    <div
+      className="explore_us"
+    >
+      <Link to="gallery" spy={true} smooth={true}>
+                Explore us
+                </Link>
+              </div>
+  )
+}
+
 function MainPage() {
           return (
             <div className="mainpage-body">
               <Navbar />
-              <div
-                className="explore_us" onClick={console.log("clicked")}
-              >
-                Explore us
-              </div>
+              <Explore />
               <Chatbox />
               <div className="fake"></div>
               <Home className="start" />

@@ -101,11 +101,13 @@ a{
     
 .explore_us{
     position: fixed;
-    z-index: 1;
     bottom: 10vh;
-    color: #fff;
+    z-index: 1;
+    display: flex;
+    color: rgb(0, 0, 0);
     align-self: flex-start;
     margin-left: 12%;
+    color: white;
     padding: 2% 7%;
     font-weight: 500;
     border: 3px white solid;
@@ -236,14 +238,15 @@ a{
     background-color: rgb(12, 36, 60);
     color: white;
     display: flex;
-    padding: 0% 10%;
     flex-direction: column;
     z-index: 1;
+    width: 100%;
 }
 .socialbar{
     display: flex;
-    justify-content: space-evenly;
-    width: 40%;
+    justify-content: space-between;
+    width: 30%;
+    padding-left: 12%;
 }
 .icon{
     font-weight: 800;
@@ -265,6 +268,7 @@ a{
 .footer-heading{
     font-size: calc(20px + 2vw);
     text-align: left;
+    padding-left: 7%;
 }
 .endname{
     background: url("../images/city.jpg");
@@ -284,6 +288,7 @@ a{
 }
 .details{
     text-align: left;
+    padding-left: 10%;
 }
 
 /***** Opening hours *******/

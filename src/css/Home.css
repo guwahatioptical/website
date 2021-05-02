@@ -5,10 +5,10 @@
     position: fixed;
     justify-content: center;
     z-index: 0;
-    overflow: hidden;
 }
 .carousel img{
     height: 100vh;
+    overflow: hidden;
 }
 .tagline{
     display: flex;
