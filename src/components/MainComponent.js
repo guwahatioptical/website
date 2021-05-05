@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import "../css/mainpage.css"
+import "../css/maincomponent.css"
 import { Link } from "react-scroll"
 import AOS from "aos"
 import 'aos/dist/aos.css'

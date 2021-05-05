@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/mainpage.css";
+import "../css/maincomponent.css";
 import { GiCrossMark } from "react-icons/gi";
 import { TextField } from "@material-ui/core";
 import axios from "axios";
