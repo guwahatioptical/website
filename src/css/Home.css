@@ -20,6 +20,21 @@
     height: 30vh;
     width: 100%;
 }
+.explore_us{
+    position: fixed;
+    bottom: 10vh;
+    z-index: 1;
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-self: flex-start;
+    margin-left: 12%;
+    color: white;
+    padding: 2% 7%;
+    font-weight: 500;
+    border: 3px white solid;
+    border-radius: 50px;
+    cursor: pointer;
+}      
 
 /* responsive */
 
@@ -38,4 +53,8 @@
       bottom: 0vh;
       font-size: calc(15px + 9vw);
   }
+  
+    .explore_us{
+        font-size: calc(15px + 3vw);
+    }
 }

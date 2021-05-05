@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import '../css/Home.css'
+import { Link } from "react-scroll";
 import {
   web1,
   web2,
@@ -54,6 +55,11 @@ function Home() {
         <div className="tagline">
           <div>{tags[frame][0]}</div>
           <div>{tags[frame][1]}</div>
+        </div>
+        <div className="explore_us">
+          <Link to="gallery" spy={true} smooth={true}>
+            Explore us
+          </Link>
         </div>
       </div>
     );

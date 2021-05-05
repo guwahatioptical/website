@@ -99,20 +99,6 @@ a{
             margin: 2vh auto;
         }
     
-.explore_us{
-    position: fixed;
-    bottom: 10vh;
-    z-index: 1;
-    display: flex;
-    color: rgb(0, 0, 0);
-    align-self: flex-start;
-    margin-left: 12%;
-    color: white;
-    padding: 2% 7%;
-    font-weight: 500;
-    border: 3px white solid;
-    border-radius: 50px;
-}
 
 /* --------- message ----------*/
 
@@ -334,8 +320,5 @@ a{
     .chat_section{
         height: 70vh;
         width: 80%;
-    }
-    .explore_us{
-        font-size: calc(15px + 3vw);
     }
 }

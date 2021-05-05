@@ -1,9 +1,9 @@
 import {useState} from 'react'
 import Intro from './intro';
-import MainPage from './MainPage'
-import '../css/Main.css';
+import MainComponent from './MainComponent'
+import '../css/App.css';
 
-function Main() {
+function App() {
   const [splash, setSplash] = useState(true)
   const intro = () =>
     setTimeout(() => {
@@ -12,9 +12,9 @@ function Main() {
   return (
     <div className="App">
       {splash ? <Intro onload={intro()} /> : null}
-      <MainPage  />
+      <MainComponent  />
     </div>
   );
 }
 
-export default Main;
+export default App;

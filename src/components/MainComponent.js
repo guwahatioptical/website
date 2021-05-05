@@ -323,23 +323,10 @@ function Gallery() {
   );
 }
 
-function Explore() {
-  return (
-    <div
-      className="explore_us"
-    >
-      <Link to="gallery" spy={true} smooth={true}>
-                Explore us
-                </Link>
-              </div>
-  )
-}
-
-function MainPage() {
+function MainComponent() {
           return (
             <div className="mainpage-body">
               <Navbar />
-              <Explore />
               <Chatbox />
               <div className="fake"></div>
               <Home className="start" />
@@ -390,4 +377,4 @@ function MainPage() {
           );
 }
 
-export default MainPage
+export default MainComponent
