@@ -1,61 +1,22 @@
-import React,{useState, useEffect} from 'react'
+import React,{ Suspense, useState, useEffect} from 'react'
 import "../css/maincomponent.css"
 import { Link } from "react-scroll"
 import AOS from "aos"
 import 'aos/dist/aos.css'
 import{
-  logo,
-  dkny,
-  essilor,
-  hoya,
-  idee,
-  prada,
-  puma,
-  RayBanCompany,
-  silhovette,
-  vogue,
-  youngeroptics,
-  g834,
-  g856,
-  g1244,
-  g1248,
-  g1256,
-  g1260,
-  g1264,
-  g1317,
-  g1321,
-  g1325,
-  g1329,
-  g1333,
-  g1337,
-  g1389,
-  g1393,
-  g1397,
-  g1401,
-  g1405,
-  g1451,
-  g1455,
-  g1459,
-  g1463,
-  g1467,
-  g1471,
-  g1475,
-  g1479,
-  g1480,
-  g1485,
-  g1491,
-  g1494,
-  g1498,
+  logo
 } from "../images/image";
 import { IoMenu } from "react-icons/io5";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { FaFacebookF, FaRegAddressCard } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
-import Iframe from 'react-iframe'
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import Home from "./Home";
-import Reviews from './Reviews'
-import Chatbox from "./ChatBox";
+const Home = React.lazy(() => import('./Home'))
+const Chatbox = React.lazy(()=>import("./ChatBox"));
+const Gallery = React.lazy(() => import("./Gallery"));
+const Reviews = React.lazy(()=>import('./Reviews'))
+const Location = React.lazy(() => import("./Location"));
+
 
 AOS.init();
 
@@ -164,20 +125,6 @@ function Navbar(){
     );
 }
 
-function Location() {
-    return (
-      <div id="location" className="locate-container">
-        <h3 data-aos="fade" className="heading">Locate Us</h3>
-        <Iframe
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
-    &q=Commerce College, Commercial Point, 1st Floor, Kabita Mansion, Rajgarh Link Rd, near Guwahati, Chandmari, Guwahati, Assam"
-          className="locate"
-          display="initial"
-        />
-      </div>
-    );
-}
-
 function AboutUs() {
   return (
     <div id="aboutus" className="aboutus-container">
@@ -252,88 +199,25 @@ function ContactDetails() {
   );
 }
 
-function Gallery() {
-  const images = [
-    g834,
-    g856,
-    g1244,
-    g1248,
-    g1256,
-    g1260,
-    g1264,
-    g1317,
-    g1321,
-    g1325,
-    g1329,
-    g1333,
-    g1337,
-    g1389,
-    g1393,
-    g1397,
-    g1401,
-    g1405,
-    g1451,
-    g1455,
-    g1459,
-    g1463,
-    g1467,
-    g1471,
-    g1475,
-    g1479,
-    g1480,
-    g1485,
-    g1491,
-    g1494,
-    g1498,
-  ];
-
-  return (
-    <div id="gallery" className="gallery" style={{backgroundColor:"#fff"}}>
-      <div className="photos">
-        <h3 data-aos="fade" className="heading">Gallery</h3>
-        {images.map((image, index) => (
-          <img data-aos="fade-up"
-            style={{ margin: "1vh 2vw" }}
-            key={index}
-            src={image}
-            alt="img"
-          />
-        ))}
-      </div>
-      <div className="brands">
-        <h3 data-aos="fade-in" className="heading">Brands Available</h3>
-        <li style={{ marginTop: "4vh" }}>
-          <img data-aos="zoom-in-up" src={dkny} alt="brand" />
-          <img data-aos="zoom-in-up" src={essilor} alt="brand" />
-          <img data-aos="zoom-in-up" src={silhovette} alt="brand" />
-          <img data-aos="zoom-in-up" src={idee} alt="brand" />
-        </li>
-        <li>
-          <img data-aos="zoom-in-up" src={prada} alt="brand" />
-          <img data-aos="zoom-in-up" src={puma} alt="brand" />
-          <img data-aos="zoom-in-up" src={RayBanCompany} alt="brand" />
-          <img data-aos="zoom-in-up" src={hoya} alt="brand" />
-        </li>
-        <li style={{ marginTop: "3vh" }}>
-          <img data-aos="zoom-in-up" src={vogue} alt="brand" />
-          <img data-aos="zoom-in-up" src={youngeroptics} alt="brand" />
-        </li>
-      </div>
-    </div>
-  );
-}
 
 function MainComponent() {
           return (
             <div className="mainpage-body">
               <Navbar />
-              <Chatbox />
+              <Suspense fallback={<div>Loading...</div>}>
+              <Chatbox /></Suspense>
               <div className="fake"></div>
+              <Suspense fallback={<div>Loading...</div>}>
               <Home className="start" />
-              <Gallery />
-              <Reviews />
+              </Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
+              <Gallery /></Suspense>
+              <Suspense fallback={<div>Loading...</div>}>
+              <Reviews /></Suspense>
               <AboutUs />
+              <Suspense fallback={<div>Loading...</div>}>
               <Location />
+              </Suspense>
               <div id="timing" className="timing">
                 <h3 className="heading">Opening Hours</h3>
                 <div>
