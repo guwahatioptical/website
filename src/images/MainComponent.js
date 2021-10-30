@@ -5,17 +5,17 @@ import AOS from "aos"
 import 'aos/dist/aos.css'
 import{
   logo
-} from "../images/image";
+} from "./image";
 import { IoMenu } from "react-icons/io5";
 import { IoMdCall, IoMdMail } from "react-icons/io";
 import { FaFacebookF, FaRegAddressCard } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-const Home = React.lazy(() => import('./Home'))
-const Chatbox = React.lazy(()=>import("./ChatBox"));
-const Gallery = React.lazy(() => import("./Gallery"));
-const Reviews = React.lazy(()=>import('./Reviews'))
-const Location = React.lazy(() => import("./Location"));
+const Home = React.lazy(() => import('../components/Home'))
+const Chatbox = React.lazy(()=>import("../components/ChatBox"));
+const Gallery = React.lazy(() => import("../components/Gallery"));
+const Reviews = React.lazy(()=>import('../components/Reviews'))
+const Location = React.lazy(() => import("../components/Location"));
 
 
 AOS.init();
