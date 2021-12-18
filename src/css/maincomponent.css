@@ -20,9 +20,9 @@ a{
     padding: 0px;
 }
 .fake{
-    width: 100%;
-    height: 100vh;
-    z-index: -100;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .fadeIn{
     opacity: 1;
@@ -51,30 +51,22 @@ a{
 
   /*     navbar     */
 
-  .navbar{
-      position: fixed;
-      display: flex;
-      height: calc(2vw + 45px);
-      padding: 1.3vh;
-      align-items: center;
-      width: 90%;
+  .go-navbar{
       z-index: 6;
-      padding: 0% 10%;
-      justify-content: space-between;
       transition: .2s ease-in-out;
   }
-    .navbar img{
+    .go-navbar img{
         width: calc(4vw + 70px);
     }
     .links{
-        display: inherit;
-        width: 65vw;
+        display: flex;
         font-size: calc(.7vw + 7px);
         justify-content: space-evenly;
     }
         .nav_link{
-            color: #a0a0a0;
+            color: #ffffff;
             font-weight: 700;
+            text-decoration: none !important;
         }
     .menu{
         font-size: calc(4vw + 12px);
@@ -121,7 +113,6 @@ a{
 .chat_container{
     background-color: rgba(0, 0, 0, 0.295);
     height: 100vh;
-    width: 100vw;
     position: fixed;
     left: 0;
     display: flex;
@@ -134,30 +125,20 @@ a{
     background-color: rgb(255, 255, 255);
 }
 .chat_header{
-    height: 6vh;
     color: white;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px;
     background-color:rgb(255, 115, 0);
 }
 .chat_header .cut{
-    border-radius: 50%;
-    position: relative;
-    right: -27vw;
-    top: -3vh;
-    cursor: pointer;
-    padding: 7px;
-    background-color: #fff;
-    color: rgb(255, 115, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
 }
 .chat_section form{
     display: flex;
     align-items: center;
     width: 100%;
-    height: 90%;
     flex-direction: column;
     justify-content: space-evenly;
 }
@@ -165,11 +146,9 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 500;
     color: rgb(255, 115, 0);
-    height: 90%;
     flex-direction: column;
 }
 
@@ -193,7 +172,6 @@ a{
 }
 .locate{
     height: 45vh;
-    width: 90%;
 }
 
 /********* Aboutus **********/
@@ -201,7 +179,6 @@ a{
 .aboutus-container{
     display: flex;
     background-color: #fff;
-    padding-top: calc(2vw + 45px);
     flex-direction: column;
     padding: 3vh 5vw;
     z-index: 1;
@@ -209,7 +186,6 @@ a{
 .aboutus{
     color: rgb(104, 104, 104);
     font-family: 'Roboto', sans-serif;
-    font-size: 5vw;
 }
 
 .heading{
@@ -227,22 +203,20 @@ a{
     flex-direction: column;
     z-index: 1;
     width: 100%;
+    transform: translateY(-0.8px);
 }
 .socialbar{
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    padding-left: 12%;
 }
 .icon{
-    font-weight: 800;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
     border-radius: 50%;
+}
+.icon-svg{
+    font-weight: 900;
+    font-size: 30px;
+    display: flex;
+    color: #fff;
 }
 .icon:nth-child(1){
     background-color: #4c68d7;
@@ -260,8 +234,7 @@ a{
     background: url("../images/city.webp");
     margin: 0px;
     z-index: 1;
-    width: 100%;
-    height: 27vh;
+    height: 627px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -274,7 +247,6 @@ a{
 }
 .details{
     text-align: left;
-    padding-left: 10%;
 }
 
 /***** Opening hours *******/
@@ -307,18 +279,14 @@ a{
 }
 
 
-@media only screen and (max-width: 551px) {
+@media only screen and (max-width: 768px) {
     .menu{
-        display: block;
+        display: flex;
     }
     .links{
-        display: none;
+        display: none !important;
     }
-    .photos img{
-        height: 8vh;
-    }
-    .chat_section{
-        height: 70vh;
-        width: 80%;
+    .nav_link{
+        color: #a0a0a0;
     }
 }

@@ -11,7 +11,7 @@ function Location() {
       <Iframe
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBtpCoYQ-cOKg9jmgtEsq84PfbP8BftMLA
     &q=1st Floor, Guwahati Optical, Kabita Mansion, Commerce College, Commercial Point, Rajgarh Link Rd, Guwahati, Assam 781003"
-        className="locate"
+        className="locate col-12 col-md-10"
         display="initial"
       />
     </div>

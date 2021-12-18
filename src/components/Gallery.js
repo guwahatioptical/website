@@ -83,42 +83,44 @@ function Gallery() {
     g1498,
   ];
 
+  const brands = [
+    dkny,
+    essilor,silhovette,idee,prada,puma,RayBanCompany,hoya,vogue,youngeroptics
+  ]
+
   return (
-    <div id="gallery" className="gallery" style={{ backgroundColor: "#fff" }}>
-      <div className="photos">
+    <div
+      id="gallery"
+      className="gallery col-12 justify-content-evenly"
+      style={{ backgroundColor: "#fff" }}
+    >
+      <div className="col-11 mx-auto">
         <h3 data-aos="fade" className="heading">
           Gallery
         </h3>
         {images.map((image, index) => (
           <img
             data-aos="fade-up"
-            style={{ margin: "1vh 2vw" }}
             key={index}
             src={image}
             alt="img"
+            className="col-3 col-md-2 my-md-3  mx-md-4 mx-2 my-2"
           />
         ))}
       </div>
-      <div className="brands">
-        <h3 data-aos="fade-in" className="heading">
+      <div className="brands col-10 mx-auto">
+        <h3 data-aos="fade-in" className="heading col-12">
           Brands Available
         </h3>
-        <li style={{ marginTop: "4vh" }}>
-          <img data-aos="zoom-in-up" src={dkny} alt="brand" />
-          <img data-aos="zoom-in-up" src={essilor} alt="brand" />
-          <img data-aos="zoom-in-up" src={silhovette} alt="brand" />
-          <img data-aos="zoom-in-up" src={idee} alt="brand" />
-        </li>
-        <li>
-          <img data-aos="zoom-in-up" src={prada} alt="brand" />
-          <img data-aos="zoom-in-up" src={puma} alt="brand" />
-          <img data-aos="zoom-in-up" src={RayBanCompany} alt="brand" />
-          <img data-aos="zoom-in-up" src={hoya} alt="brand" />
-        </li>
-        <li style={{ marginTop: "3vh" }}>
-          <img data-aos="zoom-in-up" src={vogue} alt="brand" />
-          <img data-aos="zoom-in-up" src={youngeroptics} alt="brand" />
-        </li>
+        {brands.map((image, index) => (
+          <img
+            data-aos="fade-up"
+            key={index}
+            src={image}
+            alt="img"
+            className="col-3 col-md-2 my-md-3  mx-md-4 mx-2 my-2"
+          />
+        ))}
       </div>
     </div>
   );

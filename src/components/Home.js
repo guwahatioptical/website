@@ -2,21 +2,16 @@ import React, {useState, useEffect} from 'react'
 import '../css/Home.css'
 import { Link } from "react-scroll";
 import {
-  web1,
-  web2,
   web3,
   web4,
   web5,
   web6,
-  web7,
   web8,
-  web9,
-  web10,
   mob2,
   mob3,
   mob4,
   mob6,
-  mob8,
+  mob8
 } from "../images/image";
 
 
@@ -29,7 +24,7 @@ function Home() {
     mob3,
     mob2,
     mob4
-  ] : [web1, web2, web3, web4, web5, web6, web7, web8, web9, web10]
+  ] :(width >= 551 ? [web8, web3, web4, web5, web6,  ]:[])
   const checkSize = () => {
     setWidth(window.innerWidth)
   }
@@ -50,14 +45,14 @@ function Home() {
   })
   
     return (
-      <div id="home" className="carousel">
+      <div id="home" className="carousel col-12 justify-content-center">
         <img src={home_images[frame]} alt="frame1" />
-        <div className="tagline">
+        {/* <div className="tagline">
           <div>{tags[frame][0]}</div>
           <div>{tags[frame][1]}</div>
-        </div>
-        <div className="explore_us">
-          <Link to="gallery" spy={true} smooth={true}>
+        </div> */}
+        <div className="col-12 d-flex back-drop justify-content-center">
+          <Link className="explore_us" to="gallery" spy={true} smooth={true}>
             Explore us
           </Link>
         </div>

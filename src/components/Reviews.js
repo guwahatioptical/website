@@ -39,7 +39,7 @@ function Review({ r_index, fullName, review, rating, color }) {
         float: r_index % 2 === 0 ? "left" : "right",
       }}
       data-aos="flip-up"
-          className="review-container"
+          className="review-container px-5 py-5 mx-2 my-2"
         >
           <div className="name">
             {fullName} |{" "}
@@ -132,9 +132,10 @@ function Reviews() {
     return reviews.slice(start,end)
   }
     return (
-      <div id="reviews">
-        <h3 data-aos="fade-in" className="review-heading">Happy Customers</h3>
-        <div className="reviews">  {getReviews().map((review, index) => 
+      <div id="reviews" className="d-flex flex-column col-12">
+        <h3 data-aos="fade-in" className="review-heading mb-3 col-12 mx-auto">Happy Customers</h3>
+        <div className="reviews col-10 mx-auto">
+          {getReviews().map((review, index) =>
           <Review key={index} r_index={index} {...review} />
         )
         }</div>

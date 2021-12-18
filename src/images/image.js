@@ -56,7 +56,11 @@ import g1485 from "./gallery/g1485.webp";
 import g1491 from "./gallery/g1491.webp";
 import g1494 from "./gallery/g1494.webp";
 import g1498 from "./gallery/g1498.webp";
+import desktop from "./carousel/desktop.jpg";
+import desktop2 from "./carousel/desktop2.jpg";
+import desktop3 from "./carousel/desktop3.jpg";
 export {
+  desktop3,
   logo,
   city,
   web1,
@@ -115,4 +119,6 @@ export {
   g1491,
   g1494,
   g1498,
+  desktop,
+  desktop2
 };
