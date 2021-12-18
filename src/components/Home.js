@@ -28,13 +28,13 @@ function Home() {
   const checkSize = () => {
     setWidth(window.innerWidth)
   }
-  const tags = [
-    [`Look better`, `and live better.`],
-    ["See better.", "Look perfect."],
-    ["Vision for", "a better life."],
-    ["See what", " missing…"],
-    ["See better.", "Look perfect."],
-  ]
+  // const tags = [
+  //   [`Look better`, `and live better.`],
+  //   ["See better.", "Look perfect."],
+  //   ["Vision for", "a better life."],
+  //   ["See what", " missing…"],
+  //   ["See better.", "Look perfect."],
+  // ]
   useEffect(() => {
     window.addEventListener('load', checkSize)
     window.addEventListener('load', () => 
